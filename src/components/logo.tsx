@@ -33,11 +33,10 @@ export function Mark({ size = 36 }: { size?: number }) {
       <rect x="1" y="1" width="38" height="38" stroke="#2a2a2a" strokeWidth="1" />
       <path d="M1 5V1H5" stroke="#f59e0b" strokeWidth="1" />
       <path d="M39 35V39H35" stroke="#f59e0b" strokeWidth="1" />
-      {/* W-bolt: chunky W with a literal lightning bolt shooting up out of the central peak */}
+      {/* W-bolt: clean integrated W where central stroke reads as lightning */}
       <path
-        d="M5 7 L13 7 L18 28 L24 14 L20 14 L26 4 L28 14 L23 14 L22 28 L27 7 L35 7 L26 33 L20 21 L14 33 Z"
+        d="M5 8 L13 32 L20 14 L27 32 L35 8 L28 8 L24 20 L20 8 L16 20 L12 8 Z"
         fill="#f59e0b"
-        fillRule="evenodd"
       />
     </svg>
   );
