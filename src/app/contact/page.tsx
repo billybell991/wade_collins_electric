@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, ArrowRight, type LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contact — Get a Quote",
@@ -157,8 +157,6 @@ export default function ContactPage() {
   );
 }
 
-type IconType = React.ComponentType<{ className?: string; strokeWidth?: number }>;
-
 function ContactRow({
   icon: Icon,
   label,
@@ -167,7 +165,7 @@ function ContactRow({
   mono,
   small,
 }: {
-  icon: IconType;
+  icon: LucideIcon;
   label: string;
   value: React.ReactNode;
   href?: string;
