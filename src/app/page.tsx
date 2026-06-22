@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Phone, Quote, Star } from "lucide-react";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const services = [
   { num: "S-01", title: "Service Panel Upgrades", desc: "Replacement of outdated 60/100A panels with modern 200A service to meet today's load demands." },
   { num: "S-02", title: "Baseboard & Heating", desc: "Removing dead-weight baseboard heat, installing efficient replacements and dedicated circuits." },
@@ -52,7 +54,7 @@ export default function HomePage() {
               <span className="absolute -bottom-px -left-px w-3 h-3 border-b border-l border-accent" />
               <span className="absolute -bottom-px -right-px w-3 h-3 border-b border-r border-accent" />
               <Image
-                src="/photos/panel.jpg"
+                src={`${BASE}/photos/panel.jpg`}
                 alt="Electrical service panel work"
                 fill
                 priority
@@ -114,7 +116,7 @@ export default function HomePage() {
               <span className="absolute -bottom-px -left-px w-3 h-3 border-b border-l border-accent" />
               <span className="absolute -bottom-px -right-px w-3 h-3 border-b border-r border-accent" />
               <Image
-                src="/photos/wiring.jpg"
+                src={`${BASE}/photos/wiring.jpg`}
                 alt="Electrician in a hard hat installing a wall outlet with a cordless drill"
                 fill
                 className="object-cover object-right"
