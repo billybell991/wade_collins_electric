@@ -29,23 +29,15 @@ export function Mark({ size = 36 }: { size?: number }) {
       className="shrink-0"
       aria-hidden="true"
     >
+      {/* Frame + corner ticks */}
       <rect x="1" y="1" width="38" height="38" stroke="#2a2a2a" strokeWidth="1" />
       <path d="M1 5V1H5" stroke="#f59e0b" strokeWidth="1" />
       <path d="M39 35V39H35" stroke="#f59e0b" strokeWidth="1" />
+      {/* W-bolt: chunky W with a literal lightning bolt shooting up out of the central peak */}
       <path
-        d="M9 11L13 28L18 18L23 28L27 11"
-        stroke="#ededed"
-        strokeWidth="1.75"
-        strokeLinejoin="miter"
-        fill="none"
-      />
-      <path
-        d="M30 9L23 21H29L26 31"
-        stroke="#f59e0b"
-        strokeWidth="1.75"
-        strokeLinejoin="miter"
-        strokeLinecap="square"
-        fill="none"
+        d="M5 7 L13 7 L18 28 L24 14 L20 14 L26 4 L28 14 L23 14 L22 28 L27 7 L35 7 L26 33 L20 21 L14 33 Z"
+        fill="#f59e0b"
+        fillRule="evenodd"
       />
     </svg>
   );

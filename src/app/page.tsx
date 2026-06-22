@@ -115,9 +115,9 @@ export default function HomePage() {
               <span className="absolute -bottom-px -right-px w-3 h-3 border-b border-r border-accent" />
               <Image
                 src="/photos/wiring.jpg"
-                alt="Outdoor electrical service work"
+                alt="Electrician in a hard hat installing a wall outlet with a cordless drill"
                 fill
-                className="object-cover"
+                className="object-cover object-right"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
