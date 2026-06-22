@@ -16,8 +16,13 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Wade Collins Electric | Mattawa, ON",
-  description: "Modern, reliable electrical solutions in Mattawa, Ontario. Residential and Commercial contractor.",
+  title: {
+    default: "Wade Collins Electric — Licensed Electrician, Mattawa ON",
+    template: "%s | Wade Collins Electric",
+  },
+  description:
+    "Licensed electrical contractor serving Mattawa, North Bay, and the Ottawa Valley. Panel upgrades, EV chargers, baseboard heating, residential & commercial wiring. Call 613-402-0933.",
+  metadataBase: new URL("https://wadecollinselectric.ca"),
 };
 
 export default function RootLayout({

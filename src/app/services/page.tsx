@@ -1,115 +1,129 @@
-import { Zap, Sun, ShieldAlert, Cpu, Fan, Building, Home, Construction } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight, Phone, Home, Building2, Zap, Lightbulb, ThermometerSun, Plug, ClipboardCheck, Hammer } from "lucide-react";
 
-const residentialServices = [
-  {
-    icon: <Home className="w-8 h-8" />,
-    title: "Panel Upgrades & Replacements",
-    description: "Replace outdated or unsafe electrical panels. Essential for older homes to meet modern power demands and safety standards."
-  },
-  {
-    icon: <Sun className="w-8 h-8" />,
-    title: "Lighting Solutions",
-    description: "Interior and exterior lighting installation, including pot lights, security lighting, and energy-efficient LED upgrades."
-  },
-  {
-    icon: <Fan className="w-8 h-8" />,
-    title: "Heating Upgrades",
-    description: "Removing and disabling old, inefficient baseboard heaters. Upgrading to smarter, more efficient thermal solutions."
-  },
-  {
-    icon: <Cpu className="w-8 h-8" />,
-    title: "Smart Home Integration",
-    description: "Installation of smart switches, thermostats, doorbells, and home automation systems."
-  },
-  {
-    icon: <Zap className="w-8 h-8" />,
-    title: "EV Charger Installation",
-    description: "Professional installation of Level 2 electric vehicle charging stations right in your garage or driveway."
-  },
-  {
-    icon: <ShieldAlert className="w-8 h-8" />,
-    title: "Inspections & Troubleshooting",
-    description: "Evaluating connections to provincial power lines, locating shorts, and standardizing older wiring setups."
-  }
+export const metadata: Metadata = {
+  title: "Services — Residential & Commercial Electrical",
+  description:
+    "Service panel upgrades, EV chargers, baseboard heating, lighting, and full commercial electrical build-out in Mattawa and the Ottawa Valley.",
+};
+
+const residential = [
+  { icon: Zap, num: "R-01", title: "Service Panel Upgrades", desc: "60A / 100A to 200A modernization. Permit pulled, hydro coordinated, ESA inspected." },
+  { icon: ThermometerSun, num: "R-02", title: "Baseboard & Heating", desc: "Removal of obsolete electric heat, install of efficient replacements and zoning." },
+  { icon: Lightbulb, num: "R-03", title: "Lighting & Switches", desc: "Pot lights, dimmers, three-way circuits, exterior security, smart switch wiring." },
+  { icon: Plug, num: "R-04", title: "EV Charger Install", desc: "Level 2 chargers wired to dedicated 40A circuits. Rebate-ready documentation." },
+  { icon: ClipboardCheck, num: "R-05", title: "Service Inspections", desc: "Pre-purchase wiring assessments, hydro entrance evaluations, troubleshooting." },
+  { icon: Home, num: "R-06", title: "Renos & Additions", desc: "Rough-in and finish for kitchens, basements, garages, and additions." },
 ];
 
-const commercialServices = [
-  {
-    icon: <Building className="w-8 h-8" />,
-    title: "Commercial Build-outs",
-    description: "Full electrical rough-ins and finishing for new offices, retail spaces, and warehouses."
-  },
-  {
-    icon: <Construction className="w-8 h-8" />,
-    title: "Lighting & Signage",
-    description: "High-bay lighting, exterior security lighting, and dedicated circuits for commercial signage."
-  }
+const commercial = [
+  { icon: Building2, num: "C-01", title: "Build-Out & Rough-In", desc: "Full electrical for retail fit-outs, offices, and light industrial spaces." },
+  { icon: Hammer, num: "C-02", title: "Lighting & Signage", desc: "High-bay, parking lot, illuminated sign feeds, photo-cell controls." },
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="flex flex-col">
-      {/* Page Header */}
-      <section className="bg-slate-900 border-b border-white/5 pt-32 pb-20 mt-[-80px]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Expert Electrical Services</h1>
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
-            From simple residential switch replacements to extensive commercial build-outs, we bring precision and modern know-how to every job.
+    <>
+      {/* ============ HEADER ============ */}
+      <section className="border-b border-line">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+          <div className="eyebrow mb-6">// Services</div>
+          <h1 className="text-5xl lg:text-7xl font-semibold tracking-tight text-white leading-[0.95] max-w-4xl">
+            What we wire.<br />
+            <span className="text-mute">Top to bottom.</span>
+          </h1>
+          <p className="text-dim text-lg max-w-2xl mt-8 leading-relaxed">
+            Two sides of the business: residential service work and commercial
+            build-out. Both done to ESA code, both done clean.
           </p>
         </div>
       </section>
 
-      {/* Residential */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Residential Services</h2>
-            <div className="h-1 w-20 bg-brand-yellow rounded-full"></div>
+      {/* ============ RESIDENTIAL ============ */}
+      <section id="residential" className="border-b border-line scroll-mt-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
+            <div>
+              <div className="eyebrow mb-4">// 01 Residential</div>
+              <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-white">
+                Home electrical work.
+              </h2>
+            </div>
+            <div className="font-mono text-xs text-mute tracking-widest">06 SERVICES</div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {residentialServices.map((svc, i) => (
-              <div key={i} className="bg-slate-800/40 p-8 rounded-2xl border border-white/5 hover:border-brand-yellow/30 transition-colors group">
-                <div className="text-brand-yellow mb-6 bg-brand-yellow/10 w-16 h-16 flex items-center justify-center rounded-xl group-hover:scale-110 transition-transform">
-                  {svc.icon}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line">
+            {residential.map((s) => (
+              <div key={s.num} className="bg-bg p-7 group hover:bg-bg-1 transition-colors">
+                <div className="flex items-center justify-between mb-5">
+                  <s.icon className="w-6 h-6 text-accent" strokeWidth={1.5} />
+                  <div className="font-mono text-[0.65rem] text-mute tracking-widest">{s.num}</div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{svc.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{svc.description}</p>
+                <h3 className="text-xl font-semibold text-white mb-3 leading-snug">{s.title}</h3>
+                <p className="text-dim text-sm leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Commercial */}
-      <section className="py-20 bg-slate-900/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Commercial Services</h2>
-            <div className="h-1 w-20 bg-brand-blue rounded-full"></div>
+      {/* ============ COMMERCIAL ============ */}
+      <section id="commercial" className="border-b border-line scroll-mt-20">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+          <div className="flex items-end justify-between mb-12 flex-wrap gap-6">
+            <div>
+              <div className="eyebrow mb-4">// 02 Commercial</div>
+              <h2 className="text-4xl lg:text-5xl font-semibold tracking-tight text-white">
+                Business & build-out.
+              </h2>
+            </div>
+            <div className="font-mono text-xs text-mute tracking-widest">02 SERVICES</div>
           </div>
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {commercialServices.map((svc, i) => (
-              <div key={i} className="bg-slate-800/40 p-8 rounded-2xl border border-white/5 hover:border-brand-blue/30 transition-colors group">
-                <div className="text-brand-blue mb-6 bg-brand-blue/10 w-16 h-16 flex items-center justify-center rounded-xl group-hover:scale-110 transition-transform">
-                  {svc.icon}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-line">
+            {commercial.map((s) => (
+              <div key={s.num} className="bg-bg p-10 group hover:bg-bg-1 transition-colors">
+                <div className="flex items-center justify-between mb-6">
+                  <s.icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
+                  <div className="font-mono text-[0.65rem] text-mute tracking-widest">{s.num}</div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{svc.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{svc.description}</p>
+                <h3 className="text-2xl font-semibold text-white mb-4 leading-snug">{s.title}</h3>
+                <p className="text-dim text-base leading-relaxed">{s.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 text-center px-4">
-        <h2 className="text-3xl font-bold text-white mb-6">Have a specific project in mind?</h2>
-        <p className="text-slate-400 mb-8 max-w-lg mx-auto">We provide free quotes and transparent pricing before starting any work.</p>
-        <Link href="/contact" className="inline-flex px-8 py-4 rounded-xl bg-brand-yellow text-slate-900 font-bold hover:bg-[#fef08a] transition-colors">
-          Contact Us for an Estimate
-        </Link>
+      {/* ============ CTA ============ */}
+      <section>
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+          <div className="border border-line bg-bg-1 p-10 lg:p-14 relative">
+            <span className="absolute -top-px -left-px w-4 h-4 border-t border-l border-accent" />
+            <span className="absolute -top-px -right-px w-4 h-4 border-t border-r border-accent" />
+            <span className="absolute -bottom-px -left-px w-4 h-4 border-b border-l border-accent" />
+            <span className="absolute -bottom-px -right-px w-4 h-4 border-b border-r border-accent" />
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <div className="eyebrow mb-4">// Don&apos;t see it listed?</div>
+                <h3 className="text-3xl lg:text-4xl font-semibold tracking-tight text-white leading-tight">
+                  Call. Most electrical work falls in scope.
+                </h3>
+              </div>
+              <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
+                <Link href="/contact" className="btn-primary">
+                  Get a Quote <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a href="tel:6134020933" className="btn-ghost">
+                  <Phone className="w-4 h-4" />
+                  <span className="font-mono">613.402.0933</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
-    </div>
+    </>
   );
 }
